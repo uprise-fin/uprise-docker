@@ -24,5 +24,5 @@ RUN chmod 777 /.config
 RUN mkdir /.local
 RUN chmod 777 /.local
 
-RUN useradd jenkins
+RUN useradd -u 112 jenkins
 RUN usermod -aG docker jenkins
