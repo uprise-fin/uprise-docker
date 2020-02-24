@@ -14,6 +14,7 @@ RUN add-apt-repository \
    stable"
 RUN apt-get update
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io
+RUN pip install docker-compose
 
 RUN pip install poetry
 RUN mkdir /.cache
