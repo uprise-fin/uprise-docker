@@ -3,12 +3,14 @@ name: Docker Image CI
 on:
   push:
     branches: [ master ]
-    paths-ignore:
-      - README.md
+    paths:
+      - python3.8.1/**
+      - .github/workflows/python3.8.1.yml
   pull_request:
     branches: [ master ]
-    paths-ignore:
-      - README.md
+    paths:
+      - python3.8.1/**
+      - .github/workflows/python3.8.1.yml
 jobs:
   build:
     runs-on: ubuntu-latest
