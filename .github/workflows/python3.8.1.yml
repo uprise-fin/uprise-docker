@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Python 3.8.1 Docker Image CI
 
 on:
   push:
