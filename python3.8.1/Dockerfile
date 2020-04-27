@@ -41,3 +41,5 @@ RUN mkdir /.config
 RUN chmod 777 /.config
 RUN mkdir /.local
 RUN chmod 777 /.local
+
+RUN curl -sL https://sentry.io/get-cli/ | bash
