@@ -17,13 +17,12 @@ jobs:
     steps:
     - name: Checkout the repo
       uses: actions/checkout@v2
-    - name: Push to Github
-      uses: whoan/docker-build-with-cache-action@v5
+    - name: Push to Dockerhub
+      uses: docker/build-push-action@v1
       with:
           username: $ {{ secrets.DOCKER_USER_NAME }}
           password: "${{ secrets.DOCKER_ACCESS_TOKEN }}"
-          image_name: heybit/python
-          image_tag: 3.8.1
-          push_git_tag: true
-          context: python3.8.1
-          build_extra_args: "--compress=true"
+          repository: heybit/python
+          tags: 3.8.1
+          tag_with_sha: true
+          path: python3.8.1
