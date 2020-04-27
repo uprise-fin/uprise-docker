@@ -1,4 +1,4 @@
-name: Python 3.8.1 Docker Image CI
+name: Python 3.8.1 Docker CI
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
     - name: Checkout the repo
       uses: actions/checkout@v2
     - name: Push to Github
-      uses: docker/build-push-action@v1
+      uses: whoan/docker-build-with-cache-action@v5
       with:
           username: $ {{ github.actor }}
           password: "${{ secrets.GITHUB_TOKEN }}"
