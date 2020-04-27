@@ -15,8 +15,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: whoan/docker-build-with-cache-action@v5
+    - name: Checkout the repo
+      uses: actions/checkout@v2
+    - name: Push to Github
+      uses: docker/build-push-action@v1
       with:
           username: $ {{ github.actor }}
           password: "${{ secrets.GITHUB_TOKEN }}"
