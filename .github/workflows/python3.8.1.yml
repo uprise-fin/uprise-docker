@@ -27,4 +27,5 @@ jobs:
           push_git_tag: true
           registry: docker.pkg.github.com
           context: python3.8.1
+          dockerfile: python3.8.1/Dockerfile
           build_extra_args: "--compress=true"
