@@ -20,11 +20,10 @@ jobs:
     - name: Push to Github
       uses: whoan/docker-build-with-cache-action@v5
       with:
-          username: $ {{ github.actor }}
-          password: "${{ secrets.GITHUB_TOKEN }}"
-          image_name: uprise-fin/uprise-docker/python
+          username: $ {{ secrets.DOCKER_USER_NAME }}
+          password: "${{ secrets.DOCKER_ACCESS_TOKEN }}"
+          image_name: heybit/python
           image_tag: 3.8.1
           push_git_tag: true
-          registry: docker.pkg.github.com
           context: python3.8.1
           build_extra_args: "--compress=true"
