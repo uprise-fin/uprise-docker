@@ -3,16 +3,23 @@ name: Docker Image CI
 on:
   push:
     branches: [ master ]
+    paths: ["python3.8.1/Dockerfile"]
   pull_request:
     branches: [ master ]
+    paths: ["python3.8.1/Dockerfile"]
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file ./python3.8.1/Dockerfile --tag "python:3.8.1"
+    - uses: whoan/docker-build-with-cache-action@v5
+      with:
+          username: astralhpi
+          password: "${{ secrets.GITHUB_TOKEN }}"
+          image_name: python
+          image_tag: 3.8.1
+          push_git_tag: true
+          registry: docker.pkg.github.com
+          context: python3.8.1
+          build_extra_args: "--compress=true"
