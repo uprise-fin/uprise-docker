@@ -14,7 +14,6 @@ RUN add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/debian \
    $(lsb_release -cs) \
    stable"
-RUN apt-get update
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io
 RUN pip install docker-compose
 
@@ -25,6 +24,8 @@ RUN apt-get install -y \
     zlib1g-dev \
     libsnappy-dev \
     libgflags-dev
+
+RUN apt-get upgrade -y git
 
 RUN git clone https://github.com/facebook/rocksdb.git
 WORKDIR rocksdb
