@@ -1,7 +1,6 @@
-FROM node:10.20.1-buster-slim
+FROM heybit/python:sha-7f3e1bf
 
 RUN apt update
 RUN apt upgrade
-RUN apt install -y git python3 python3-pip
+RUN apt install -y nodejs npm
 RUN npm install -g serverless
-RUN pip3 install poetry
