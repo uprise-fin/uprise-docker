@@ -1,5 +1,5 @@
 FROM lambci/lambda:build-python3.8
-
+RUN curl -sL https://sentry.io/get-cli/ | bash
 RUN yum -y install mysql-devel
 RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 RUN yum -y install nodejs
