@@ -23,5 +23,4 @@ RUN curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-c
     -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
 # yaml
-RUN apt install -y python3-pip && pip3 install \
-    pip3 install pyyaml
+RUN apt install -y python3-pip && pip3 install pyyaml
