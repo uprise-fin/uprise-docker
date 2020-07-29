@@ -1,0 +1,24 @@
+name: Node 12.18 Docker CI
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - node12.18/**
+      - .github/workflows/node.12.18.yml
+
+jobs:
+  build_node1218:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the repo
+      uses: actions/checkout@v2
+    - name: Push to Dockerhub
+      uses: docker/build-push-action@v1
+      with:
+          username: ${{ secrets.DOCKER_USER_NAME }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+          repository: heybit/node
+          tags: 12.18
+          tag_with_sha: true
+          path: node12.18
