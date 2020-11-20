@@ -37,7 +37,7 @@ RUN make install-shared INSTALL_PATH=/usr
 WORKDIR /
 RUN rm -rf rocksdb
 
-RUN pip install poetry
+RUN pip install poetry==1.0.3
 RUN mkdir /.cache
 RUN chmod 777 /.cache
 RUN mkdir /.config
