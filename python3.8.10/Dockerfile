@@ -29,14 +29,6 @@ RUN apt-get install -y \
 
 RUN apt-get upgrade -y git
 
-RUN git clone https://github.com/facebook/rocksdb.git
-WORKDIR rocksdb
-RUN git checkout v6.6.4
-RUN make shared_lib
-RUN make install-shared INSTALL_PATH=/usr
-WORKDIR /
-RUN rm -rf rocksdb
-
 RUN pip install poetry==1.1.6
 RUN mkdir /.cache
 RUN chmod 777 /.cache
