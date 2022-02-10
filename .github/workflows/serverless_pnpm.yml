@@ -1,4 +1,4 @@
-name: Serverless Docker CI
+name: Serverless Docker CI(pnpm)
 on:
   push:
     branches: [ master ]
