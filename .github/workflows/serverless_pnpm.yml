@@ -3,8 +3,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - serverless/**
-      - .github/workflows/serverless.yml
+      - serverless_pnpm/**
+      - .github/workflows/serverless_pnpm.yml
 
 jobs:
   build:
