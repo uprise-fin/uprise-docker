@@ -20,4 +20,4 @@ jobs:
           repository: heybit/serverless_pnpm
           tags: latest
           tag_with_sha: true
-          path: serverless
+          path: serverless_pnpm
