@@ -3,8 +3,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - node14_pnpm/**
-      - .github/workflows/node14_pnpm.yml
+      - node14-pnpm/**
+      - .github/workflows/node14-pnpm.yml
 
 jobs:
   build:
@@ -17,8 +17,8 @@ jobs:
       with:
           username: ${{ secrets.DOCKER_USER_NAME }}
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
-          repository: heybit/node14_pnpm
+          repository: heybit/node14-pnpm
           tags: latest
           tag_with_sha: true
-          path: node14_pnpm
+          path: node14-pnpm
           
