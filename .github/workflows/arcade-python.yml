@@ -6,6 +6,7 @@ on:
     paths:
       - arcade/python/**
       - .github/workflows/arcade-python.yml
+  workflow_dispatch:
 
 jobs:
   python:
