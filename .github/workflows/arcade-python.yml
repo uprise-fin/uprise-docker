@@ -26,4 +26,4 @@ jobs:
         with:
           push: true
           context: arcade/python
-          tags: heybit/arcade-python:3.8.12
+          tags: heybit/arcade-python:3.8.14

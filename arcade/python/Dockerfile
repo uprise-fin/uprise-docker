@@ -1,4 +1,4 @@
-FROM python:3.8.12-bullseye
+FROM python:3.8.14-bullseye
 
 ENV POETRY_VIRTUALENVS_CREATE=False
 
