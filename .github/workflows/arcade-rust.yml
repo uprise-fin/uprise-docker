@@ -1,11 +1,12 @@
-name: Arcade-Nodejs Docker CI
+name: Arcade-Rust Docker CI
 
 on:
   push:
     branches: [master]
     paths:
-      - arcade/nodejs/**
-      - .github/workflows/arcade-nodejs.yml
+      - arcade/rust/**
+      - .github/workflows/arcade-rust.yml
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,5 +25,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          context: arcade/nodejs
-          tags: heybit/arcade-nodejs:12.18
+          context: arcade/rust
+          tags: heybit/arcade-rust:1.63
