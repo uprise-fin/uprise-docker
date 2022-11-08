@@ -1,4 +1,4 @@
-name: Serverless Docker CI
+name: NGINX Docker CI
 on:
   push:
     branches: [ master ]
