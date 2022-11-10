@@ -46,6 +46,10 @@ RUN HEADERSMOREDIR="/usr/src/headers-more-nginx-module-0.34" && \
 
 FROM nginx:${NGINX_VERSION}-alpine as nginx
 
+RUN echo "sync shutdown halt lp uucp games ftp guest squid" | tr ' ' '\n' | xargs -I {} deluser {}
+RUN echo -e 'TMOUT=600\nreadonly TMOUT\nexport TMOUT'  >> /etc/profile
+RUN chmod 400 /etc/shadow
+
 #########################################################################################
 # COPY: NGINX - BUILD OUTPUT FROM HEADERS MORE MODULE
 #########################################################################################
