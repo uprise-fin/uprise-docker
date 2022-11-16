@@ -1,11 +1,11 @@
-name: Python 3.11.0-alpine Docker CI
+name: Arcade Python 3.11.0-alpine Docker CI
 
 on:
   push:
     branches: [ master ]
     paths:
-      - python3.11.0-alpine/**
-      - .github/workflows/python3.11.0-alpine.yml
+      - arcade/python/3.11.0-alpine/**
+      - .github/workflows/arcade-python3.11.0-alpine.yml
 
 jobs:
   build:
@@ -25,6 +25,6 @@ jobs:
     - name: Build and Push to Dockerhub
       uses: docker/build-push-action@v3
       with:
-        context: python3.11.0-alpine
+        context: arcade/python/3.11.0-alpine
         push: true
-        tags: heybit/python:3.11.0-alpine
+        tags: heybit/arcade-python:3.11.0-alpine
