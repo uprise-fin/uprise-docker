@@ -3,8 +3,9 @@ FROM python:3.11.0-alpine
 RUN apk update
 RUN apk add docker curl git
 
-RUN pip install docker-compose
-RUN pip install poetry
+RUN python -m pip install --upgrade pip && pip install poetry docker-compose
+RUN poetry config virtualenvs.create false
+
 RUN mkdir /.cache
 RUN chmod 777 /.cache
 RUN mkdir /.config
