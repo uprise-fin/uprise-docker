@@ -27,4 +27,4 @@ jobs:
       with:
         context: python3.11.0-alpine
         push: true
-        tags: heybit/python3.11.0-alpine:latest
+        tags: heybit/python:3.11.0-alpine
