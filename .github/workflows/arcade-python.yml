@@ -25,5 +25,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          context: arcade/python
+          context: arcade/python/3.8.14
           tags: heybit/arcade-python:3.8.14
