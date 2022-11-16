@@ -1,7 +1,7 @@
 FROM python:3.11.0-alpine
 
 RUN apk update
-RUN apk add docker curl git
+RUN apk add build-base docker curl git
 
 RUN python -m pip install --upgrade pip && pip install poetry docker-compose
 RUN poetry config virtualenvs.create false
