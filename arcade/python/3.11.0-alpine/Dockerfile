@@ -1,11 +1,17 @@
 FROM python:3.11.0-alpine
 
 RUN apk update
-RUN apk add build-base mysql-client docker curl git
+# use --virtual for easily remove libs after build everything
+# remove build only libs by "RUN apk del build-deps"
+RUN apk add --no-cache --virtual build-deps build-base mariadb-connector-c-dev curl
 
-RUN python -m pip install --upgrade pip && pip install poetry docker-compose
+RUN apk add git ca-certificates
+
+RUN pip install --upgrade pip
+RUN pip install poetry
 RUN poetry config virtualenvs.create false
 
+# 취약점 처리
 RUN mkdir /.cache
 RUN chmod 777 /.cache
 RUN mkdir /.config
