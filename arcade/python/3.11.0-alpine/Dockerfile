@@ -3,9 +3,9 @@ FROM python:3.11.0-alpine
 RUN apk update
 # use --virtual for easily remove libs after build everything
 # remove build only libs by "RUN apk del build-deps"
-RUN apk add --no-cache --virtual build-deps build-base mariadb-connector-c-dev curl
+RUN apk add --no-cache --virtual build-deps build-base curl
 
-RUN apk add git ca-certificates
+RUN apk add git ca-certificates mariadb-connector-c-dev
 
 RUN pip install --upgrade pip
 RUN pip install poetry
