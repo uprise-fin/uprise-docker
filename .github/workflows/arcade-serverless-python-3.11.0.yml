@@ -27,4 +27,4 @@ jobs:
       with:
         context: arcade/serverless/python-3.11.0
         push: true
-        tags: heybit/arcade-serverless:latest
+        tags: heybit/arcade-serverless:3.11.0
