@@ -23,7 +23,6 @@ RUN chmod 777 /.local
 
 RUN curl -sL https://sentry.io/get-cli/ | sh
 
-RUN echo "sync shutdown halt lp uucp games ftp guest squid" | tr ' ' '\n' | xargs -I {} deluser {}
 # profile에 TMOUT 추가
 RUN echo -e 'TMOUT=600\nreadonly TMOUT\nexport TMOUT'  >> /etc/profile
 # shadow 파일 퍼미션 수정
