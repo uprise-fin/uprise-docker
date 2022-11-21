@@ -1,7 +1,9 @@
 FROM python:3.11.0-slim-bullseye
 
-RUN apt-get update
-RUN apt-get install -y \
+RUN curl -fsSL https://get.docker.com -o get-docker.sh
+RUN sh get-docker.sh
+
+RUN apt install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -15,8 +17,6 @@ RUN apt-get install -y \
     libcurl4-openssl-dev \
     libmariadb-dev \
     git \
-    docker-ce docker-ce-cli containerd.io docker-compose-plugin
-
 
 RUN pip install --upgrade pip
 RUN pip install --upgrade awscli
