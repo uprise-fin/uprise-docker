@@ -17,7 +17,7 @@ RUN apt install -y \
     git
 
 RUN curl -fsSL https://get.docker.com -o get-docker.sh
-RUN sh get-docker.sh
+RUN bash get-docker.sh
 
 RUN pip install --upgrade pip
 RUN pip install --upgrade awscli
@@ -32,7 +32,7 @@ RUN chmod 777 /.config
 RUN mkdir /.local
 RUN chmod 777 /.local
 
-RUN curl -sL https://sentry.io/get-cli/ | sh
+RUN curl -sL https://sentry.io/get-cli/ | bash
 
 # profile에 TMOUT 추가
 RUN echo -e 'TMOUT=600\nreadonly TMOUT\nexport TMOUT'  >> /etc/profile
