@@ -1,4 +1,4 @@
-name: Arcade Serverless with python 3.11.0 Docker CI
+name: Arcade Serverless with python 3.11.0-slim-bullseye Docker CI
 
 on:
   push:
