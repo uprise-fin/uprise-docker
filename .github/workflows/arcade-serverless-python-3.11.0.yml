@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
     paths:
-      - arcade/serverless/python-3.11.0/**
+      - arcade/serverless/python-3.11.0-slim-bullseye/**
       - .github/workflows/arcade-serverless-python-3.11.0.yml
 
 jobs:
