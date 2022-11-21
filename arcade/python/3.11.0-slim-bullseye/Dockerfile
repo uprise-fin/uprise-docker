@@ -7,7 +7,14 @@ RUN apt-get install -y \
     curl \
     gnupg2 \
     software-properties-common \
-    apt-utils
+    apt-utils \
+    g++ \
+    make \
+    cmake \
+    unzip \
+    libcurl4-openssl-dev \
+    libmariadb-dev
+
 
 RUN pip install --upgrade pip
 RUN pip install poetry
