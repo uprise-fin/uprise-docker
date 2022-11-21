@@ -15,7 +15,7 @@ RUN apt-get install -y \
     libcurl4-openssl-dev \
     libmariadb-dev \
     git \
-    docker
+    docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 
 RUN pip install --upgrade pip
