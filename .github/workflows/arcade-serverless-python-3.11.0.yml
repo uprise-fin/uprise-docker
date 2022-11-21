@@ -27,5 +27,4 @@ jobs:
       with:
         context: arcade/serverless/python-3.11.0-slim-bullseye
         push: true
-        tags: heybit/arcade-serverless:3.11.0-slim-bullseye
-        
+        tags: heybit/arcade-serverless:3.11.0-slim-bullseye       
