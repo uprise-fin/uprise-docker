@@ -14,10 +14,12 @@ RUN apt-get install -y \
     unzip \
     libcurl4-openssl-dev \
     libmariadb-dev \
-    git
+    git \
+    docker
 
 
 RUN pip install --upgrade pip
+RUN pip install --upgrade awscli
 RUN pip install poetry
 RUN poetry config virtualenvs.create false
 
