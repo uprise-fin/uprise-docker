@@ -13,7 +13,8 @@ RUN apt-get install -y \
     cmake \
     unzip \
     libcurl4-openssl-dev \
-    libmariadb-dev
+    libmariadb-dev \
+    git
 
 
 RUN pip install --upgrade pip
