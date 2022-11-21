@@ -25,6 +25,6 @@ jobs:
     - name: Build and Push to Dockerhub
       uses: docker/build-push-action@v3
       with:
-        context: arcade/serverless/python-3.11.0
+        context: arcade/serverless/python-3.11.0-slim-bullseye
         push: true
-        tags: heybit/arcade-serverless:3.11.0
+        tags: heybit/arcade-serverless:3.11.0-slim-bullseye
