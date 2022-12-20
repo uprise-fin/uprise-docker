@@ -1,6 +1,7 @@
 FROM node:18.12.1-alpine
 
 RUN apk update
+RUN apk --no-cache add curl bash
 
 # 취약점 처리
 RUN mkdir /.cache
