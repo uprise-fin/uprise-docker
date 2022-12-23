@@ -1,4 +1,4 @@
-FROM rust:1.63-bullseye-slim
+FROM rust:1.63-slim-bullseye
 RUN rustup component add rustfmt
 
 RUN apt update -y &&\
