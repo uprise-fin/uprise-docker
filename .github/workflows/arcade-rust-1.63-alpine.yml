@@ -1,11 +1,11 @@
-name: Arcade-Rust Docker CI
+name: Arcade-Rust 1.63 alpine Docker CI
 
 on:
   push:
     branches: [master]
     paths:
-      - arcade/rust/**
-      - .github/workflows/arcade-rust.yml
+      - arcade/rust/1.63-alpine/**
+      - .github/workflows/arcade-rust-1.63-alpine.yml
 
 jobs:
   build:
@@ -24,5 +24,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          context: arcade/rust
-          tags: heybit/arcade-rust:1.63
+          context: arcade/rust/1.63-alpine
+          tags: heybit/arcade-rust:1.63-alpine
