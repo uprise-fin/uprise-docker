@@ -1,11 +1,11 @@
-name: Arcade-Rust Docker 1.66 slim-bullseye CI
+name: Arcade-Rust Docker 1.66.1 slim-bullseye CI
 
 on:
   push:
     branches: [master]
     paths:
-      - arcade/rust/1.66-slim-bullseye/**
-      - .github/workflows/arcade-rust-1.66-slim-bullseye.yml
+      - arcade/rust/1.66.1-slim-bullseye/**
+      - .github/workflows/arcade-rust-1.66.1-slim-bullseye.yml
 
 jobs:
   build:
@@ -24,5 +24,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          context: arcade/rust/1.66-slim-bullseye
-          tags: heybit/arcade-rust:1.66-slim-bullseye
+          context: arcade/rust/1.66.1-slim-bullseye
+          tags: heybit/arcade-rust:1.66.1-slim-bullseye
