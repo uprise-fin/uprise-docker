@@ -1,0 +1,28 @@
+name: Arcade-Rust Docker 1.66 slim-bullseye CI
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - arcade/rust/1.66-slim-bullseye/**
+      - .github/workflows/arcade-rust-1.66-slim-bullseye.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v2
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USER_NAME }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+
+      - name: Build and push to Github Package
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          context: arcade/rust/1.66-slim-bullseye
+          tags: heybit/arcade-rust:1.66-slim-bullseye
