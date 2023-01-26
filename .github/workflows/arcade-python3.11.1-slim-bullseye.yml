@@ -1,11 +1,11 @@
-name: Arcade Python 3.11.0-slim-bullseye Docker CI
+name: Arcade Python 3.11.1-slim-bullseye Docker CI
 
 on:
   push:
     branches: [ master ]
     paths:
-      - arcade/python/3.11.0-slim-bullseye/**
-      - .github/workflows/arcade-python3.11.0-slim-bullseye.yml
+      - arcade/python/3.11.1-slim-bullseye/**
+      - .github/workflows/arcade-python3.11.1-slim-bullseye.yml
 
 jobs:
   build:
@@ -25,6 +25,6 @@ jobs:
     - name: Build and Push to Dockerhub
       uses: docker/build-push-action@v3
       with:
-        context: arcade/python/3.11.0-slim-bullseye
+        context: arcade/python/3.11.1-slim-bullseye
         push: true
-        tags: heybit/arcade-python:3.11.0-slim-bullseye
+        tags: heybit/arcade-python:3.11.1-slim-bullseye
