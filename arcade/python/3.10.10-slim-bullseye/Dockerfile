@@ -14,7 +14,8 @@ RUN apt install -y \
     unzip \
     libcurl4-openssl-dev \
     libmariadb-dev \
-    git
+    git \
+    jq
 
 RUN curl -fsSL https://get.docker.com -o get-docker.sh
 RUN bash get-docker.sh
