@@ -1,11 +1,11 @@
-name: Arcade Python 3.10.10-slim-bullseye Docker CI
+name: Arcade Serverless with python 3.10.11-slim-bullseye Docker CI
 
 on:
   push:
     branches: [ master ]
     paths:
-      - arcade/python/3.10.10-slim-bullseye/**
-      - .github/workflows/arcade-python3.10.10-slim-bullseye.yml
+      - arcade/serverless/python-3.10.11-slim-bullseye/**
+      - .github/workflows/arcade-serverless-python-3.10.11.yml
 
 jobs:
   build:
@@ -25,6 +25,6 @@ jobs:
     - name: Build and Push to Dockerhub
       uses: docker/build-push-action@v3
       with:
-        context: arcade/python/3.10.10-slim-bullseye
+        context: arcade/serverless/python-3.10.11-slim-bullseye
         push: true
-        tags: heybit/arcade-python:3.10.10-slim-bullseye
+        tags: heybit/arcade-serverless:3.10.11-slim-bullseye
