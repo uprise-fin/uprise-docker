@@ -1,11 +1,11 @@
-name: Arcade Nodejs 18.12.1-alpine Docker CI
+name: Arcade Nodejs 18.16.1-alpine Docker CI
 
 on:
   push:
     branches: [ master ]
     paths:
-      - arcade/nodejs/18.12.1-alpine/**
-      - .github/workflows/arcade-nodejs-18.12.1-alpine.yml
+      - arcade/nodejs/18.16.1-alpine/**
+      - .github/workflows/arcade-nodejs-18.16.1-alpine.yml
 
 jobs:
   build:
@@ -25,6 +25,6 @@ jobs:
     - name: Build and Push to Dockerhub
       uses: docker/build-push-action@v3
       with:
-        context: arcade/nodejs/18.12.1-alpine
+        context: arcade/nodejs/18.16.1-alpine
         push: true
-        tags: heybit/arcade-nodejs:18.12.1-alpine
+        tags: heybit/arcade-nodejs:18.16.1-alpine

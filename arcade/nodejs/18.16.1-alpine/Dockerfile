@@ -1,15 +1,14 @@
-FROM node:18.12.1-alpine
+FROM node:18.16.1-alpine
 
-RUN apk update
-RUN apk --no-cache add curl bash
+RUN apk update && apk --no-cache add curl bash
 
 # 취약점 처리
-RUN mkdir /.cache
-RUN chmod 777 /.cache
-RUN mkdir /.config
-RUN chmod 777 /.config
-RUN mkdir /.local
-RUN chmod 777 /.local
+RUN mkdir /.cache \
+    && chmod 777 /.cache \
+    && mkdir /.config \
+    && chmod 777 /.config \
+    && mkdir /.local \
+    && chmod 777 /.local
 
 RUN curl -sL https://sentry.io/get-cli/ | sh
 
