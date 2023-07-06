@@ -13,6 +13,7 @@ RUN apt update  \
     cmake \
     unzip \
     libcurl4-openssl-dev \
+    pkg-config \
     libmariadb-dev \
     git \
     jq \
