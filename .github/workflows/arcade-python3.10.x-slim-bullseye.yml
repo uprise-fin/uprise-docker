@@ -1,5 +1,9 @@
 name: Arcade Python 3.10.x-slim-bullseye Docker CI
 
+env:
+  PYTHON_VERSION: "3.10.13"
+
+
 on:
   push:
     branches: [ master ]
@@ -25,5 +29,5 @@ jobs:
       with:
         context: arcade/python/3.10.x-slim-bullseye
         push: true
-        tags: heybit/arcade-python:3.10.13-slim-bullseye
+        tags: heybit/arcade-python:${{ env.PYTHON_VERSION }}-slim-bullseye
         platforms: linux/amd64
