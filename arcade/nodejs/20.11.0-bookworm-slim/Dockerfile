@@ -4,13 +4,10 @@ RUN apt-get update \
     && apt-get install -y curl bash \
     && rm -rf /var/lib/apt/lists/*
 
-
-
 RUN curl -sL https://sentry.io/get-cli/ | sh
 
 # 계정 삭제
-RUN echo "sync shutdown halt lp uucp games ftp guest squid" | tr ' ' '\n' | xargs -I {} userdel -r {}
-
+RUN awk -F: '$1 !~ /^(root|node)$/ {print $1}' /etc/passwd | xargs -r -n 1 sh -c 'userdel $1' _
 
 # profile에 TMOUT 추가
 RUN echo -e 'TMOUT=600\nreadonly TMOUT\nexport TMOUT'  >> /etc/profile
