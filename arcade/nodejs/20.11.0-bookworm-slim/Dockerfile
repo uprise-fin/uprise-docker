@@ -1,12 +1,16 @@
 FROM node:20.11.0-bookworm-slim
 
-RUN apt-get update && apt-get install -y curl bash
+RUN apt-get update \
+    && apt-get install -y curl bash \
+    && rm -rf /var/lib/apt/lists/*
+
 
 
 RUN curl -sL https://sentry.io/get-cli/ | sh
 
 # 계정 삭제
-RUN echo "sync shutdown halt lp uucp games ftp guest squid" | tr ' ' '\n' | xargs -I {} deluser {}
+RUN echo "sync shutdown halt lp uucp games ftp guest squid" | tr ' ' '\n' | xargs -I {} userdel -r {}
+
 
 # profile에 TMOUT 추가
 RUN echo -e 'TMOUT=600\nreadonly TMOUT\nexport TMOUT'  >> /etc/profile
