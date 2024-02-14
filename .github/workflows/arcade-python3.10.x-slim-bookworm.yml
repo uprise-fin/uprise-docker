@@ -1,4 +1,4 @@
-name: Arcade Python 3.10.x-slim-bullseye Docker CI
+name: Arcade Python 3.10.x-slim-bookworm Docker CI
 
 env:
   PYTHON_VERSION: "3.10.13"
@@ -8,8 +8,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - arcade/python/3.10.x-slim-bullseye/**
-      - .github/workflows/arcade-python3.10.x-slim-bullseye.yml
+      - arcade/python/3.10.x-slim-bookworm/**
+      - .github/workflows/arcade-python3.10.x-slim-bookworm.yml
 
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
     - name: Build and Push to Dockerhub
       uses: docker/build-push-action@v3
       with:
-        context: arcade/python/3.10.x-slim-bullseye
+        context: arcade/python/3.10.x-slim-bookworm
         push: true
-        tags: heybit/arcade-python:${{ env.PYTHON_VERSION }}-slim-bullseye
+        tags: heybit/arcade-python:${{ env.PYTHON_VERSION }}-slim-bookworm
         platforms: linux/amd64
