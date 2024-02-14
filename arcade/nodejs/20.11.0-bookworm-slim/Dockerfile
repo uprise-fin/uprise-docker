@@ -1,6 +1,7 @@
 FROM node:20.11.0-bookworm-slim
 
-RUN apk update && apk --no-cache add curl bash
+RUN apt-get update && apt-get install -y curl bash
+
 
 RUN curl -sL https://sentry.io/get-cli/ | sh
 
