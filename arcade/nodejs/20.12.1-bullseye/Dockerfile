@@ -1,7 +1,7 @@
-FROM node:20.11.0-bookworm-slim
+FROM node:20.12.1-bullseye-slim
 
 RUN apt-get update \
-    && apt-get install -y curl bash \
+    && apt-get install -y curl bash libssl1.1 \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sL https://sentry.io/get-cli/ | sh
