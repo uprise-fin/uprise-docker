@@ -1,11 +1,11 @@
-name: Arcade Nodejs 20.11.0-alpine Docker CI
+name: Arcade Nodejs 20.12.2-alpine Docker CI
 
 on:
   push:
     branches: [ master ]
     paths:
-      - arcade/nodejs/20.11.0-alpine/**
-      - .github/workflows/arcade-nodejs-20.11.0-alpine.yml
+      - arcade/nodejs/20.12.2-alpine/**
+      - .github/workflows/arcade-nodejs-20.12.2-alpine.yml
 
 jobs:
   build:
@@ -25,6 +25,6 @@ jobs:
     - name: Build and Push to Dockerhub
       uses: docker/build-push-action@v5
       with:
-        context: arcade/nodejs/20.11.0-alpine
+        context: arcade/nodejs/20.12.2-alpine
         push: true
-        tags: heybit/arcade-nodejs:20.11.0-alpine
+        tags: heybit/arcade-nodejs:20.12.2-alpine
