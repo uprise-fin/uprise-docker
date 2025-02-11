@@ -14,7 +14,11 @@ RUN mkdir /.cache \
     && mkdir /.local \
     && chmod 777 /.local
 # 계정 삭제
-RUN echo "sync shutdown halt lp uucp games ftp guest squid" | tr ' ' '\n' | xargs -I {} deluser {}
+RUN for user in sync shutdown halt lp uucp games ftp guest squid; do \
+    if id "$user" >/dev/null 2>&1; then \
+        deluser $user; \
+    fi \
+done
 # profile에 TMOUT 추가
 RUN echo -e 'TMOUT=600\nreadonly TMOUT\nexport TMOUT'  >> /etc/profile
 # shadow 파일 퍼미션 수정
