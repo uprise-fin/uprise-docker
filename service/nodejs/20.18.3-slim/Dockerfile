@@ -10,12 +10,7 @@ RUN apt-get update && apt-get install -y --install-recommends \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV NO_UPDATE_NOTIFIER=true
-RUN npm install -g pnpm@9.15.5
-
-ENV PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
-RUN pnpm exec playwright install chromium
-
-RUN curl -sL https://sentry.io/get-cli/ | sh
+RUN npm install -g pnpm@9.15.5 @sentry/cli
 
 # 계정 삭제
 RUN awk -F: '$1 !~ /^(root|node)$/ {print $1}' /etc/passwd | xargs -r -n 1 sh -c 'userdel $1' _
