@@ -29,11 +29,6 @@ RUN chmod 400 /etc/shadow
 # 공급망 메타데이터
 LABEL org.opencontainers.image.source="https://github.com/uprise-fin"
 LABEL org.opencontainers.image.licenses="MIT"
-LABEL org.opencontainers.image.version="20.18.3-alpine"
-
-# 비루트 사용자(node)로 실행
-WORKDIR /app
-RUN chown -R node:node /app /.cache /.config /.local
-USER node
+LABEL org.opencontainers.image.version="20.18.3-slim"
 
 CMD ["node"]
