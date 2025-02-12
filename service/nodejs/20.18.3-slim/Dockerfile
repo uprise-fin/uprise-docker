@@ -32,6 +32,8 @@ LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.version="20.18.3-alpine"
 
 # 비루트 사용자(node)로 실행
+WORKDIR /app
+RUN chown -R node:node /app
 USER node
 
 CMD ["node"]

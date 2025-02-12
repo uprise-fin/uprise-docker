@@ -30,8 +30,10 @@ LABEL org.opencontainers.image.licenses="MIT"
 LABEL org.opencontainers.image.version="20.18.3-alpine"
 
 # 비루트 사용자 생성 및 전환
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup && \
-    chown -R appuser:appgroup /.cache /.config /.local
-USER appuser
+RUN addgroup -S node && adduser -S node -G node && \
+    chown -R node:node /.cache /.config /.local
+WORKDIR /app
+RUN chown -R node:node /app
+USER node
 
 CMD ["node"]
