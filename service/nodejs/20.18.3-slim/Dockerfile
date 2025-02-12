@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y --install-recommends \
     moreutils \
     chromium \
     ca-certificates \
+    libssl1.1 \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV NO_UPDATE_NOTIFIER=true

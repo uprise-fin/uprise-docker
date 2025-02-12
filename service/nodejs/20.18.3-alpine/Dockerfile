@@ -1,7 +1,7 @@
 FROM node:20.18.3-alpine
 
 RUN apk update \
-    && apk add --no-cache curl bash jq yq moreutils make
+    && apk add --no-cache curl bash jq yq moreutils make libssl1.1
 
 ENV NO_UPDATE_NOTIFIER=true
 RUN npm install -g pnpm@9.15.5 @sentry/cli
